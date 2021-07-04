@@ -7,6 +7,5 @@ import sfmc.beerinventory.web.model.BeerInventoryDTO;
 @Mapper(uses = {DateMapper.class})
 public interface BeerInventoryMapper {
     BeerInventory beerInventoryDtoToBeerInventory(BeerInventoryDTO beerInventoryDTO);
-
     BeerInventoryDTO beerInventoryToBeerInventoryDto(BeerInventory beerInventory);
 }

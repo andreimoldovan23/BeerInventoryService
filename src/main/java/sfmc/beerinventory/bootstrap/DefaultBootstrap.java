@@ -39,13 +39,13 @@ public class DefaultBootstrap implements CommandLineRunner {
         beerInventoryRepository.save(BeerInventory.builder()
                 .beerId(BEER_2_UUID)
                 .upc(BEER_2_UPC)
-                .quantityOnHand(50)
+                .quantityOnHand(70)
                 .build());
 
         beerInventoryRepository.saveAndFlush(BeerInventory.builder()
                 .beerId(BEER_3_UUID)
                 .upc(BEER_3_UPC)
-                .quantityOnHand(50)
+                .quantityOnHand(100)
                 .build());
 
         log.trace("Loaded Inventory. Record count: {}", beerInventoryRepository.count());
