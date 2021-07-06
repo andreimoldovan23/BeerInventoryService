@@ -25,8 +25,12 @@ public class BeerInventoryController {
     List<BeerInventoryDTO> listBeersById(@PathVariable UUID beerId){
         log.trace("Finding Inventory for beerId: {}", beerId);
 
-        return beerInventoryRepository.findAllByBeerId(beerId).stream()
+        List<BeerInventoryDTO> inventoryDTOS = beerInventoryRepository.findAllByBeerId(beerId).stream()
                 .map(beerInventoryMapper::beerInventoryToBeerInventoryDto)
                 .collect(Collectors.toList());
+
+        log.trace("For beer {} got inventories: {}", beerId, inventoryDTOS);
+
+        return inventoryDTOS;
     }
 }
