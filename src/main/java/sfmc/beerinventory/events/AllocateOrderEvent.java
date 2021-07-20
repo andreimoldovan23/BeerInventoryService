@@ -1,5 +1,7 @@
 package sfmc.beerinventory.events;
 
+import java.io.Serializable;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,6 +12,6 @@ import sfmc.beerinventory.web.model.BeerOrderDTO;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AllocateOrderEvent {
+public class AllocateOrderEvent implements Serializable {
     private BeerOrderDTO beerOrderDTO;
 }

@@ -8,6 +8,7 @@ import org.springframework.jms.support.converter.MessageType;
 import sfmc.beerinventory.events.AllocateOrderEvent;
 import sfmc.beerinventory.events.AllocationResponseEvent;
 import sfmc.beerinventory.events.BeerEvent;
+import sfmc.beerinventory.events.DeallocateOrderEvent;
 import sfmc.beerinventory.events.NewInventoryEvent;
 import sfmc.beerinventory.web.model.BeerDTO;
 import sfmc.beerinventory.web.model.BeerOrderDTO;
@@ -20,6 +21,7 @@ public class JmsConfig {
     public static final String NEW_INVENTORY_QUEUE = "new-inventory-request";
     public static final String ALLOCATE_ORDER_QUEUE = "allocate-order-request";
     public static final String ALLOCATION_RESPONSE_QUEUE = "allocate-request-response";
+    public static final String DEALLOCATE_ORDER_QUEUE = "deallocate-order-request";
 
     @Bean
     MessageConverter jacksonJmsMessageConverter() {
@@ -34,6 +36,7 @@ public class JmsConfig {
         typeIdMappings.put(BeerOrderLineDTO.class.getSimpleName(), BeerOrderLineDTO.class);
         typeIdMappings.put(AllocateOrderEvent.class.getSimpleName(), AllocateOrderEvent.class);
         typeIdMappings.put(AllocationResponseEvent.class.getSimpleName(), AllocationResponseEvent.class);
+        typeIdMappings.put(DeallocateOrderEvent.class.getSimpleName(), DeallocateOrderEvent.class);
 
         converter.setTypeIdMappings(typeIdMappings);
         converter.setTypeIdPropertyName("_type");

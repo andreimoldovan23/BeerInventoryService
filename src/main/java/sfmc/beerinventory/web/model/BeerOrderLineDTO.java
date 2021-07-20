@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class BeerOrderLineDTO {
     private UUID id;
+    private UUID beerId;
     private String upc;
     private Integer orderQuantity;
     private Integer quantityAllocated;
